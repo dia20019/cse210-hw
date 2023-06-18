@@ -33,16 +33,16 @@ namespace classes{
             List<string> keys = new List<string>(prompts.Keys);
             List<string> unansweredQuestion = new List<string>(keys.Where(question => this.prompts[question] == false));
             string date = DateTime.Now.ToString("dd/MM/yyyy");
-            Random rndNum = new Random();
+            Random randomNumber = new Random();
             int listSize = unansweredQuestion.Count;
-            int rndIndex = rndNum.Next(0, listSize);
+            int randomIndex = randomNumber.Next(0, listSize);
             if (unansweredQuestion.Count == 0)
             {
                 Console.WriteLine("No more prompts available");
                 return;
             }
-            string index  = rndIndex.ToString();
-            string randomQuestion = (unansweredQuestion[rndIndex]);
+            string index  = randomIndex.ToString();
+            string randomQuestion = (unansweredQuestion[randomIndex]);
             
             prompts[randomQuestion] = true;
             Console.WriteLine(randomQuestion);
